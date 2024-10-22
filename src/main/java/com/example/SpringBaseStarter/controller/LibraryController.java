@@ -3,12 +3,10 @@ package com.example.SpringBaseStarter.controller;
  
 import com.example.SpringBaseStarter.entity.Issue;
 import com.example.SpringBaseStarter.entity.User;
-import com.example.SpringBaseStarter.repo.IssueRepository;
+import com.example.SpringBaseStarter.repo.IssueRepo;
 import com.example.SpringBaseStarter.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
  
 import java.util.Optional;
@@ -34,7 +32,7 @@ public class LibraryController {
     private UserRepo userRepo;
  
     @Autowired
-    private IssueRepository issueRepo;
+    private IssueRepo issueRepo;
  
     @PostMapping("/issue-book")
     public ResponseEntity<Issue> issueBook(@RequestBody Issue issue) {
